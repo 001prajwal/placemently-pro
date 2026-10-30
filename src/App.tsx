@@ -138,7 +138,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Toaster theme={darkMode ? 'dark' : 'light'} position="top-right" richColors />
       <div className={`app-shell ${collapsed ? 'sidebar-collapsed' : ''}`}>
         <aside className={`sidebar ${mobileMenu ? 'mobile-open' : ''}`}>
@@ -286,7 +286,7 @@ function Overview() {
         <div className="chart-footnote"><span><i className="legend-dot violet-dot" /> Applications sent</span><span>Only dates in your records are shown</span></div>
       </section>
       <section className="panel status-panel">
-        <div className="panel-heading"><div><h2>Application status</h2><p>Where things stand right now</p></div><button className="subtle-icon" onClick={() => location.assign('/applications')} aria-label="View all applications"><ArrowUpRight size={16} /></button></div>
+        <div className="panel-heading"><div><h2>Application status</h2><p>Where things stand right now</p></div><Link className="subtle-icon" to="/applications" aria-label="View all applications"><ArrowUpRight size={16} /></Link></div>
         <Suspense fallback={<div className="chart-loading donut-loading" />}><StatusDonut data={statusData} total={applications.length} /></Suspense>
         <div className="status-legend">{applicationStatuses.map((status) => {
           const count = applications.filter((app) => app.status === status).length

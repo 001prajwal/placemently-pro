@@ -3,6 +3,7 @@ import { defineConfig } from 'vitest/config'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: process.env.GITHUB_ACTIONS === 'true' ? '/placemently-pro/' : '/',
   plugins: [react()],
   build: {
     // The local PDF.js worker is a larger, on-demand asset.

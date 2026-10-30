@@ -17,6 +17,14 @@ npm run lint
 npm run build
 ```
 
+## Deploy to GitHub Pages
+
+The `main` branch workflow builds and deploys the app to GitHub Pages. After the first push, enable **Settings → Pages → Build and deployment → GitHub Actions** in the repository. When the workflow completes, the site is available at:
+
+https://001prajwal.github.io/placemently-pro/
+
+You can also start a deployment from the repository’s **Actions** tab using **Deploy to GitHub Pages → Run workflow**.
+
 ## Data and privacy
 
 - Applications, activity history, resumes, extracted resume text, and original files are stored in browser IndexedDB.
